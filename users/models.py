@@ -7,6 +7,8 @@ from django.utils.html import strip_tags
 from django.shortcuts import reverse
 from django.template.loader import render_to_string
 
+sidwq = "FUCK"
+
 
 class User(AbstractUser):
 

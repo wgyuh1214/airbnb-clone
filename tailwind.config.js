@@ -13,7 +13,8 @@ module.exports = {
         "50vh": "50vh",
         "75vh": "75vh"
       }
-    },
-    variants: {},
-    plugins: []
-  };
+    }
+  },
+  variants: {},
+  plugins: []
+};

@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 
+
 {% block page_title %}
     {{room.name}}
 {% endblock page_title %}
@@ -27,7 +28,6 @@
                     <span class="mt-2 text-gray-500">{{room.host.first_name}}</span>
                 </a>
             </div>
-
             <div class="flex border-section">
                 <span class="mr-5 font-light">{{room.room_type}}</span>
                 <span class="mr-5 font-light">{{room.beds}} bed{{room.beds|pluralize}}</span>
@@ -60,7 +60,6 @@
                 <h4 class="font-medium text-2xl mb-5">Reviews</h4>
                 <div class="flex items-center">
                     <div>
-
                         <i class="fas fa-star text-teal-500"></i>
                         <span class="font-bold text-xl">{{room.total_rating}}</span>
                     </div>
@@ -84,7 +83,7 @@
                             </div>
                             <p>{{review.review}}</p>
                         </div>
-                    {% endfor %} 
+                    {% endfor %}    
                 </div>
             </div>
         </div>
@@ -93,11 +92,33 @@
                 <a href="{% url 'rooms:edit' room.pk %}" class="btn-link block">Edit Room</a>
             {% else %}
                 {% if not request.session.is_hosting %}
-                    {{room.get_calendars}}
+                    {% for calendar in room.get_calendars %}
+                    <div class="mb-20">
+                        <span class="text-center font-semibold text-lg block mb-8">{{calendar.get_month}} / {{calendar.year}}</span>
+                        <div class="cal-grid font-medium mb-4">
+                            {% for day in calendar.day_names  %}
+                                <span>{{day}}</span>
+                            {% endfor %}
+                        </div>
+                        <div class="cal-grid">
+                            {% for day in calendar.get_days  %}
+                                {% if day.number != 0 %}
+                                    {% if day.past %}
+                                        <span class="cal-number bg-gray-200 text-gray-400">{{day}}</span>
+                                    {% else %}
+                                        <span class="cal-number bg-gray-200 text-gray-700 hover:bg-teal-400 hover:text-white hover:font-medium">{{day}}</span>
+                                    {% endif %}
+                                {% else %}
+                                  <span></span>
+                                {% endif %}
+                                
+                            {% endfor %}
+                        </div>
+                    </div>
+                    {% endfor %}
                 {% endif %}
             {% endif %}
         </div>
     </div>
-
 
 {% endblock %}

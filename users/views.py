@@ -165,6 +165,7 @@ def kakao_callback(request):
         error = token_json.get("error", None)
         if error is not None:
             raise KakaoException("Can't get authorization code.")
+
         access_token = token_json.get("access_token")
         profile_request = requests.get(
             "https://kapi.kakao.com/v1/user/me",

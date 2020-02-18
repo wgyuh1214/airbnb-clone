@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-02-18 16:23+0900\n"
+"POT-Creation-Date: 2020-02-18 17:20+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -24,52 +24,84 @@ msgstr "도시로 검색"
 
 #: templates/partials/footer.html:5
 msgid "Please don't copy us."
-msgstr "베끼지 마라."
+msgstr "베끼지 마세요."
 
 #: templates/partials/footer.html:8
 msgid "All rights reserved"
-msgstr "모든 권리 보유"
+msgstr "모든 권리를 보유하고 있습니다."
+
+#: templates/partials/nav.html:8
+msgid "Stop hosting"
+msgstr "호스팅 그만하기"
+
+#: templates/partials/nav.html:10
+msgid "Start hosting"
+msgstr "호스팅 시작하기"
+
+#: templates/partials/nav.html:15
+msgid "Create Room"
+msgstr "방 만들기"
+
+#: templates/partials/nav.html:17
+msgid "Profile"
+msgstr "프로필"
+
+#: templates/partials/nav.html:18
+msgid "Log out"
+msgstr "로그아웃"
+
+#: templates/partials/nav.html:20
+msgid "Log in"
+msgstr "로그인"
+
+#: templates/partials/nav.html:21
+msgid "Sign up"
+msgstr "회원가입"
+
+#: templates/rooms/room_detail.html:32
+msgid "Save to Favourites"
+msgstr "찜목록에 저장하기"
 
 #: templates/rooms/room_list.html:29
 #, python-format
 msgid "Page %(current_page)s of %(total_pages)s"
-msgstr ""
+msgstr "Page %(current_page)s of %(total_pages)s"
 
 #: users/mixins.py:13 users/mixins.py:22
 msgid "Can't go there"
-msgstr ""
+msgstr "수행할 수 없습니다."
 
 #: users/models.py:23
 msgid "Male"
-msgstr ""
+msgstr "남성"
 
 #: users/models.py:24
 msgid "Female"
-msgstr ""
+msgstr "여성"
 
 #: users/models.py:25
 msgid "Other"
-msgstr ""
+msgstr "다른성"
 
 #: users/models.py:32
 msgid "English"
-msgstr ""
+msgstr "영어"
 
 #: users/models.py:33
 msgid "Korean"
-msgstr ""
+msgstr "한국어"
 
 #: users/models.py:53
 msgid "gender"
-msgstr ""
+msgstr "성"
 
 #: users/models.py:55
 msgid "bio"
-msgstr ""
+msgstr "기타"
 
 #: users/models.py:58
 msgid "langauge"
-msgstr ""
+msgstr "언어"
 
 #: users/models.py:85
 msgid "Verify Airbnb Account"

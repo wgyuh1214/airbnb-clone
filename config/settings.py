@@ -100,7 +100,11 @@ else:
     DATABASES = {
         "default": {
             "ENGINE": "django.db.backends.postgresql",
-            "NAME": os.path.join(BASE_DIR, "db.sqlite3"),
+            "HOST": "airbnb-clone.cl6bdtxmj65m.ap-northeast-2.rds.amazonaws.com",
+            "NAME": "airbnb-clone",
+            "USER": "postgresql",
+            "PASSWORD": "0818-QWER!",
+            "PORT": "5432",
         }
     }
 

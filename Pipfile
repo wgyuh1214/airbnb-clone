@@ -17,10 +17,10 @@ django-dotenv = "*"
 requests = "*"
 psycopg2 = "*"
 sentry-sdk = "==0.14.1"
-django-storages = "*"
 boto3 = "*"
 psycopg2-binary = "*"
 awscli = "*"
+django-storages = "*"
 
 [requires]
 python_version = "3.8"

@@ -73,7 +73,7 @@ def complete_verification(request, key):
 
 def github_login(request):
     client_id = os.environ.get("GH_ID")
-    redirect_uri = "http://127.0.0.1:8000/users/login/github/callback"
+    redirect_uri = "http://airbnb-clone.bmtccjqewb.ap-northeast-2.elasticbeanstalk.com/users/login/github/callback"
     return redirect(
         f"https://github.com/login/oauth/authorize?client_id={client_id}&redirect_uri={redirect_uri}&scope=read:user"
     )
@@ -143,7 +143,7 @@ def github_callback(request):
 
 def kakao_login(request):
     client_id = os.environ.get("KAKAO_ID")
-    redirect_uri = "http://127.0.0.1:8000/users/login/kakao/callback"
+    redirect_uri = "http://airbnb-clone.bmtccjqewb.ap-northeast-2.elasticbeanstalk.com/users/login/kakao/callback"
     return redirect(
         f"https://kauth.kakao.com/oauth/authorize?client_id={client_id}&redirect_uri={redirect_uri}&response_type=code"
     )
@@ -157,7 +157,7 @@ def kakao_callback(request):
     try:
         code = request.GET.get("code")
         client_id = os.environ.get("KAKAO_ID")
-        redirect_uri = "http://127.0.0.1:8000/users/login/kakao/callback"
+        redirect_uri = "http://airbnb-clone.bmtccjqewb.ap-northeast-2.elasticbeanstalk.com/users/login/kakao/callback"
         token_request = requests.get(
             f"https://kauth.kakao.com/oauth/token?grant_type=authorization_code&client_id={client_id}&redirect_uri={redirect_uri}&code={code}"
         )
@@ -165,7 +165,6 @@ def kakao_callback(request):
         error = token_json.get("error", None)
         if error is not None:
             raise KakaoException("Can't get authorization code.")
-
         access_token = token_json.get("access_token")
         profile_request = requests.get(
             "https://kapi.kakao.com/v1/user/me",
